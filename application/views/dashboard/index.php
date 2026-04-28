@@ -5,7 +5,7 @@
      <div class="cool-xl-4 col-md-6 mb-4">
         <div class="card border-left-primary shadow h-100 py-2">
             <div class="card body">
-                <h5> "Total Kategori"</h5>
+                <h5>  Total Kategori</h5>
                 <h3><?= $total_kategori; ?></h3>
             </div>
         </div>
@@ -14,7 +14,7 @@
      <div class="cool-xl-4 col-md-6 mb-4">
         <div class="card border-left-primary shadow h-100 py-2">
             <div class="card body">
-                <h5> "Total Anggota"</h5>
+                <h5> Total Anggota</h5>
                 <h3><?= $total_anggota; ?></h3>
             </div>
         </div>
