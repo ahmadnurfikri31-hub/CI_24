@@ -29,6 +29,21 @@
     </a>
 </li>
 
+<!-- Peminjaman -->
+    <li class="<?= $this->uri->segment(1)=='buku' ? 'nav-item active' : 'nav-item' ?>">
+    <a class="nav-link" href="<?= site_url('buku') ?>">
+        <i class="fas fa-book"></i>
+        <span>buku</span>
+    </a>
+</li>
+
+    <li class="<?= $this->uri->segment(1)=='peminjaman' ? 'nav-item active' : 'nav-item' ?>">
+    <a class="nav-link" href="<?= site_url('peminjaman') ?>">
+        <i class="fas fa-book"></i>
+        <span>Peminjaman</span>
+    </a>
+</li>
+
 </ul>
 <div id="content-wrapper" class="d-flex flex-column">
     <div id="content">
