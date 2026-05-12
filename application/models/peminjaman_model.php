@@ -7,7 +7,7 @@ class Peminjaman_model extends CI_Model{
     {
         $this->db->select('peminjaman.*, anggota.nama');
         $this->db->from('peminjaman');
-        $this->db->join('anggota', 'anggota.id = peminjaman.anggota_id');
+        $this->db->join('anggota', 'anggota_id = peminjaman.anggota_id');
         return $this->db->get()->result();
     }
 

@@ -37,10 +37,17 @@
     </a>
 </li>
 
-    <li class="<?= $this->uri->segment(1)=='peminjaman' ? 'nav-item active' : 'nav-item' ?>">
+<li class="<?= $this->uri->segment(1)=='peminjaman' ? 'nav-item active' : 'nav-item' ?>">
     <a class="nav-link" href="<?= site_url('peminjaman') ?>">
         <i class="fas fa-book"></i>
         <span>Peminjaman</span>
+    </a>
+</li>
+
+<li class="<?= $this->uri->segment(1)=='laporan' ? 'nav-item active' : 'nav-item' ?>">
+    <a class="nav-link" href="<?= site_url('laporan/peminjaman') ?>">
+        <i class="fas fa-book"></i>
+        <span>laporan peminjaman</span>
     </a>
 </li>
 
