@@ -1,6 +1,13 @@
 <?php
 defined('BASEPATH') OR exit ('No direct script access allowed');
 
+/**
+ * @property CI_DB_query_builder $db
+ * @property CI_Session $session
+ * @property CI_Input $input
+ * @property CI_Loader $load
+ * @property Peminjaman_model $peminjaman_model
+ */
 class peminjaman extends CI_Controller{
 
     public function __construct()
@@ -24,8 +31,8 @@ class peminjaman extends CI_Controller{
 
     public function tambah()
     {
-        $data['anggota']= $this->db->get('anggota')->result();
-        $data['buku']= $this->db->get('buku')->result();
+        $data['anggota']=$this->db->get('anggota')->result();
+        $data['buku']=$this->db->get('buku')->result();
 
         $this->load->view('templates/header');
         $this->load->view('templates/sidebar');

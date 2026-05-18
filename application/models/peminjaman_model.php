@@ -23,7 +23,7 @@ class Peminjaman_model extends CI_Model{
         ]);
 
         $this->db->set('stok', 'stok - 1', FALSE);
-        $this->db->where('id', $buku_id);
+        $this->db->where('id_buku', $buku_id);
         $this->db->update('buku');
     }
 
@@ -31,7 +31,7 @@ class Peminjaman_model extends CI_Model{
     {
         $this->db->select('detail_peminjaman.*, buku.judul');
         $this->db->from('detail_peminjaman');
-        $this->db->join('buku', 'buku.id = detail_peminjaman.buku_id');
+        $this->db->join('buku', 'buku.id_buku = detail_peminjaman.buku_id');
         $this->db->where('peminjaman_id', $id);
         return $this->db->get()->row();
     }
@@ -62,7 +62,7 @@ class Peminjaman_model extends CI_Model{
         $this->db->update('peminjaman', ['status' => 'kembali']);
 
         $this->db->set('stok', 'stok + 1', FALSE);
-        $this->db->where('id', $detail->buku_id);
+        $this->db->where('id_buku', $detail->buku_id);
         $this->db->update('buku');
     }
 

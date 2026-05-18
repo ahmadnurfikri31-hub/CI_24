@@ -23,7 +23,7 @@
                         <option value="">-- Pilih Buku --</option>
                         <?php foreach($buku as $b): ?>
                         <option value="<?= $b->id_buku; ?>">
-                            <?= $b->judul_buku; ?>
+                            <?= $b->judul; ?>
                         </option>
                         <?php endforeach; ?>
                     </select>
