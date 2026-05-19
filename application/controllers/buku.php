@@ -41,25 +41,25 @@ class Buku extends CI_Controller {
     // 🔹 SIMPAN DATA
     public function simpan()
     {
-        $this->form_validation->set_rules('kode_buku', 'Kode Buku', 'required');
+        $this->form_validation->set_rules('id_buku', 'Kode Buku', 'required');
         $this->form_validation->set_rules('judul', 'Judul', 'required');
         $this->form_validation->set_rules('penulis', 'Penulis', 'required');
         $this->form_validation->set_rules('penerbit', 'Penerbit', 'required');
         $this->form_validation->set_rules('tahun', 'Tahun', 'required');
-        $this->form_validation->set_rules('kategori', 'Kategori', 'required');
-        $this->form_validation->set_rules('stok', 'Stok', 'required');
+        $this->form_validation->set_rules('id_kategori', 'kategori', 'required');
+        $this->form_validation->set_rules('stok', 'stok', 'required');
         $this->form_validation->set_rules('lokasi_rak', 'Lokasi Rak', 'required');
 
         if ($this->form_validation->run() == FALSE) {
             $this->tambah();
         } else {
             $data = [
-                'kode_buku' => $this->input->post('kode_buku'),
+                'id_buku' => $this->input->post('id_buku'),
                 'judul' => $this->input->post('judul'),
                 'penulis' => $this->input->post('penulis'),
                 'penerbit' => $this->input->post('penerbit'),
                 'tahun' => $this->input->post('tahun'),
-                'id_kategori' => $this->input->post('kategori'),
+                'id_kategori' => $this->input->post('id_kategori'),
                 'stok' => $this->input->post('stok'),
                 'lokasi_rak' => $this->input->post('lokasi_rak')
             ];
@@ -92,19 +92,19 @@ class Buku extends CI_Controller {
     // 🔹 UPDATE DATA
     public function update($id)
     {
-        $this->form_validation->set_rules('kode_buku', 'Kode Buku', 'required');
+        $this->form_validation->set_rules('id_buku', 'Kode Buku', 'required');
         $this->form_validation->set_rules('judul', 'Judul', 'required');
 
         if ($this->form_validation->run() == FALSE) {
             $this->edit($id);
         } else {
             $data = [
-                'kode_buku' => $this->input->post('kode_buku'),
+                'id_buku' => $this->input->post('id_buku'),
                 'judul' => $this->input->post('judul'),
                 'penulis' => $this->input->post('penulis'),
                 'penerbit' => $this->input->post('penerbit'),
                 'tahun' => $this->input->post('tahun'),
-                'id_kategori' => $this->input->post('kategori'),
+                'id_kategori' => $this->input->post('id_kategori'),
                 'stok' => $this->input->post('stok'),
                 'lokasi_rak' => $this->input->post('lokasi_rak')
             ];

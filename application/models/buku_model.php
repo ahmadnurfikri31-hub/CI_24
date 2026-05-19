@@ -14,7 +14,7 @@ class buku_model extends CI_Model{
 }
     public function get_by_id($id)
     {
-        $this->db->where('kode_buku',$id);
+        $this->db->where('id_buku',$id);
         return $this->db->get('buku')->row();
     }
 
@@ -24,15 +24,15 @@ class buku_model extends CI_Model{
     }
     public function delete($id)
     {
-        return $this->db->delete($this->table,['kode_buku'=>$id]);
+        return $this->db->delete($this->table,['id_buku'=>$id]);
     }
     public function is_used($id)
     {
-        return $this->db->where('kode_buku',$id)->count_all_results('buku')>0;
+        return $this->db->where('id_buku',$id)->count_all_results('buku')>0;
     }
     public function update($id,$data)
     {
-        $this->db->where('kode_buku',$id);
+        $this->db->where('id_buku',$id);
         return $this->db->update($this->table,$data);
     }
     

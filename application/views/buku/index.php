@@ -28,16 +28,16 @@
                         <?php $no=1; foreach($buku as $b): ?>
                         <tr>
                             <td class="text-center"><?= $no++ ?></td>
-                            <td><code><?= $b->kode_buku; ?></code></td>
+                            <td><code><?= $b->id_buku; ?></code></td>
                             <td><?= $b->judul; ?></td>
                             <td><?= $b->penulis; ?></td>
                             <td><span class="badge badge-info"><?= $b->nama_kategori; ?></span></td>
                             <td class="text-center font-weight-bold"><?= $b->stok; ?></td>
                             <td class="text-center">
-                                <a href="<?= site_url('buku/edit/'.$b->kode_buku); ?>" class="btn btn-sm btn-warning text-white">
+                                <a href="<?= site_url('buku/edit/'.$b->id_buku); ?>" class="btn btn-sm btn-warning text-white">
                                     <i class="fas fa-edit"></i> Edit
                                 </a>
-                                <a href="<?= base_url('buku/hapus/'.$b->kode_buku); ?>" class="btn btn-danger btn-sm btn-hapus">
+                                <a href="<?= base_url('buku/hapus/'.$b->id_buku); ?>" class="btn btn-danger btn-sm btn-hapus">
     <i class="fas fa-trash"></i> Hapus
 </a>
                             </td>

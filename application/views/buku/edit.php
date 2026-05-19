@@ -4,7 +4,7 @@
     <div class="card shadow">
         <div class="card-body">
 
-            <form method="post" action="<?= site_url('buku/update/'.$buku->kode_buku); ?>">
+            <form method="post" action="<?= site_url('buku/update/'.$buku->id_buku); ?>">
 
                 <!-- Judul -->
                 <div class="form-group mb-3">
@@ -41,7 +41,7 @@
                         <option value="">-- Pilih Kategori --</option>
                         <?php foreach ($kategori as $k) : ?>
                             <option value="<?= $k->id; ?>" 
-                                <?= ($k->id == $buku->kategori) ? 'selected' : ''; ?>>
+                                <?= ($k->id == $buku->id_kategori) ? 'selected' : ''; ?>>
                                 <?= $k->nama_kategori; ?>
                             </option>
                         <?php endforeach; ?>
