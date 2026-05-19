@@ -59,7 +59,7 @@ class Buku extends CI_Controller {
                 'penulis' => $this->input->post('penulis'),
                 'penerbit' => $this->input->post('penerbit'),
                 'tahun' => $this->input->post('tahun'),
-                'id_kategori' => $this->input->post('id_kategori'),
+                'id_kategori' => $this->input->post('kategori'),
                 'stok' => $this->input->post('stok'),
                 'lokasi_rak' => $this->input->post('lokasi_rak')
             ];
@@ -104,7 +104,7 @@ class Buku extends CI_Controller {
                 'penulis' => $this->input->post('penulis'),
                 'penerbit' => $this->input->post('penerbit'),
                 'tahun' => $this->input->post('tahun'),
-                'id_kategori' => $this->input->post('id_kategori'),
+                'id_kategori' => $this->input->post('kategori'),
                 'stok' => $this->input->post('stok'),
                 'lokasi_rak' => $this->input->post('lokasi_rak')
             ];

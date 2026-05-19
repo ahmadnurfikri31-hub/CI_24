@@ -5,7 +5,7 @@
         <div class="card-body">
 
             <form method="post" action="<?= site_url('buku/update/'.$buku->id_buku); ?>">
-
+            
                 <!-- Judul -->
                 <div class="form-group mb-3">
                     <label>Judul Buku</label>
