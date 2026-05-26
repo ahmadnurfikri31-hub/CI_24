@@ -9,7 +9,7 @@ class Buku extends CI_Controller {
         if (!$this->session->userdata('login')){
             redirect('login');
         }
-        $this->load->model('Buku_model');
+        $this->load->model('buku_model');
         $this->load->model('Kategori_model');
         $this->load->library('form_validation');
     }
@@ -17,7 +17,7 @@ class Buku extends CI_Controller {
     // 🔹 READ (tampil data)
     public function index()
     {
-        $data['buku'] = $this->Buku_model->get_all();
+        $data['buku'] = $this->buku_model->get_all();
 
         $this->load->view('templates/header');
         $this->load->view('templates/sidebar');
@@ -46,25 +46,25 @@ class Buku extends CI_Controller {
         $this->form_validation->set_rules('penulis', 'Penulis', 'required');
         $this->form_validation->set_rules('penerbit', 'Penerbit', 'required');
         $this->form_validation->set_rules('tahun', 'Tahun', 'required');
-        $this->form_validation->set_rules('id_kategori', 'kategori', 'required');
-        $this->form_validation->set_rules('stok', 'stok', 'required');
+        $this->form_validation->set_rules('id_kategori', 'Kategori', 'required');
+        $this->form_validation->set_rules('stok', 'Stok', 'required');
         $this->form_validation->set_rules('lokasi_rak', 'Lokasi Rak', 'required');
 
         if ($this->form_validation->run() == FALSE) {
             $this->tambah();
         } else {
             $data = [
-                'id_buku' => $this->input->post('id_buku'),
-                'judul' => $this->input->post('judul'),
-                'penulis' => $this->input->post('penulis'),
-                'penerbit' => $this->input->post('penerbit'),
-                'tahun' => $this->input->post('tahun'),
-                'id_kategori' => $this->input->post('kategori'),
-                'stok' => $this->input->post('stok'),
-                'lokasi_rak' => $this->input->post('lokasi_rak')
+                'id_buku' => $this->input->post('Kode buku'),
+                'judul' => $this->input->post('Judul'),
+                'penulis' => $this->input->post('Penulis'),
+                'penerbit' => $this->input->post('Penerbit'),
+                'tahun' => $this->input->post('Tahun'),
+                'id_kategori' => $this->input->post('Kategori'),
+                'stok' => $this->input->post('Stok'),
+                'lokasi_rak' => $this->input->post('Lokasi rak')
             ];
 
-            $this->Buku_model->insert($data);
+            $this->buku_model->insert($data);
             redirect('buku');
         }
     }
@@ -72,14 +72,14 @@ class Buku extends CI_Controller {
     // 🔹 DELETE
     public function hapus($id)
     {
-        $this->Buku_model->delete($id);
+        $this->buku_model->delete($id);
         redirect('buku');
     }
 
     // 🔹 FORM EDIT
     public function edit($id)
     {
-        $data['buku'] = $this->Buku_model->get_by_id($id);
+        $data['buku'] = $this->buku_model->get_by_id($id);
         $data['kategori'] = $this->Kategori_model->get_all();
 
         $this->load->view('templates/header');
@@ -99,17 +99,17 @@ class Buku extends CI_Controller {
             $this->edit($id);
         } else {
             $data = [
-                'id_buku' => $this->input->post('id_buku'),
-                'judul' => $this->input->post('judul'),
-                'penulis' => $this->input->post('penulis'),
-                'penerbit' => $this->input->post('penerbit'),
-                'tahun' => $this->input->post('tahun'),
-                'id_kategori' => $this->input->post('kategori'),
-                'stok' => $this->input->post('stok'),
-                'lokasi_rak' => $this->input->post('lokasi_rak')
+                'id_buku' => $this->input->post('Kode buku'),
+                'judul' => $this->input->post('Judul'),
+                'penulis' => $this->input->post('Penulis'),
+                'penerbit' => $this->input->post('Penerbit'),
+                'tahun' => $this->input->post('Tahun'),
+                'id_kategori' => $this->input->post('Kategori'),
+                'stok' => $this->input->post('Stok'),
+                'lokasi_rak' => $this->input->post('Lokasi rak')
             ];
 
-            $this->Buku_model->update($id, $data);
+            $this->buku_model->update($id, $data);
             redirect('buku');
         }
     }
