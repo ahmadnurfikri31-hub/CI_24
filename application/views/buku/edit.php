@@ -4,8 +4,7 @@
     <div class="card shadow">
         <div class="card-body">
 
-            <form method="post" action="<?= site_url('buku/update/'.$buku->id_buku); ?>">
-            
+            <form method="post" action="<?= site_url('buku/update/' . $this->uri->segment(3)); ?>">            
                 <!-- Judul -->
                 <div class="form-group mb-3">
                     <label>Judul Buku</label>
