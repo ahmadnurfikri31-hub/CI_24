@@ -1,13 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-/**
- * @property CI_DB_query_builder $db
- * @property CI_Session $session
- * @property CI_Input $input
- * @property CI_Loader $load
- * @property buku_model $buku_model
- */
 class Buku extends CI_Controller {
 
     public function __construct()
